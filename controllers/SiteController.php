@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\library\helpers\HttpHelper;
+use app\models\EntryForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -62,7 +63,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model =new LoginForm();
+        $model =new EntryForm();
         $access_token = HttpHelper::getCookie('READERBALL');
         if(isset($access_token)){
             $identity = Yii::$app->user->loginByAccessToken($access_token);
