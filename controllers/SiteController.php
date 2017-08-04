@@ -68,10 +68,10 @@ class SiteController extends Controller
             if($identity){
                 return $this->render('book/booklist',['messege'=>$identity->name]);
             }else{
-                return $this->render('user/login');
+                return $this->render('//user/login');
             }
         }else{
-            return $this->render('user/login');
+            return $this->render('//user/login');
         }
 
     }
