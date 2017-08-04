@@ -22,7 +22,7 @@ class EntryForm extends Model
     public function rules()
     {
         return [
-            [['name','email','password'],'require'],
+            [['name','email','password'],'required'],
             ['email','email']
         ];
     }
