@@ -62,7 +62,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model =new LoginForm()
+        $model =new LoginForm();
         $access_token = HttpHelper::getCookie('READERBALL');
         if(isset($access_token)){
             $identity = Yii::$app->user->loginByAccessToken($access_token);
