@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\library\helpers\HttpHelper;
 use Yii;
 use app\models\EntryForm;
 use yii\web\Controller;
@@ -16,12 +17,10 @@ class UserController extends Controller
 {
     public function actionLogin()
     {
-        $model = new EntryForm();
-        if($model->load(Yii::$app->request->post())&&$model->validate())
-        {
-            return $this->render('index');
-        }else{
-            return $this->render('index');
+        $access_token = HttpHelper::getCookie('READERBALL');
+        if(isset($access_token)){
+            $identity = Yii::$app->user->loginByAccessToken($access_token);
+            return $this->render('book/booklist',['messege'=>$identity->name]);
         }
     }
 

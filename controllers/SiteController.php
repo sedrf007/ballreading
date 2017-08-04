@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\library\helpers\HttpHelper;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -61,7 +62,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $access_token = HttpHelper::getCookie('READERBALL');
+        if(isset($access_token)){
+            $identity = Yii::$app->user->loginByAccessToken($access_token);
+            if($identity){
+                return $this->render('book/booklist',['messege'=>$identity->name]);
+            }else{
+                return $this->render('user/login');
+            }
+        }else{
+            return $this->render('user/login');
+        }
+
     }
 
     /**
