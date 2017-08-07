@@ -7,6 +7,7 @@ use app\models\EntryForm;
 use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -91,6 +92,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if($model->load(Yii::$app->request->post())){
+            print_r(ArrayHelper::toArray($model));
             $user = $model->getUser();
             if($user->validatePassword($model->password)){
                 return $this->render('//book/booklist',['message'=>'登录成功']);
