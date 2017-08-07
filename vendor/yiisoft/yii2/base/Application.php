@@ -107,13 +107,13 @@ abstract class Application extends Module
      * for English, while `en-US` stands for English (United States).
      * @see sourceLanguage
      */
-    public $language = 'en-US';
+    public $language = 'zh-cn';
     /**
      * @var string the language that the application is written in. This mainly refers to
      * the language that the messages and view files are written in.
      * @see language
      */
-    public $sourceLanguage = 'en-US';
+    public $sourceLanguage = 'zh-cn';
     /**
      * @var Controller the currently active controller instance
      */
