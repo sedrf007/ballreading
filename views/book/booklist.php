@@ -6,5 +6,10 @@
  * Time: 17:27
  */
 use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use app\assets\AppAsset;
+
+$this->title = '书单';
 ?>
-<?= Html::encode($message) ?>
+
+
