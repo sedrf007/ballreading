@@ -25,7 +25,7 @@ class BookController extends Controller
             ],
 
         ]);
-
+//为什么有乱码呢
         echo GridView::widget([
             'dataProvider' => $dataprovider,
         ]);
