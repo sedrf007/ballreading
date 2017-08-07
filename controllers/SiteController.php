@@ -92,8 +92,8 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->render('//book/booklist',['message'=>'登录成功']);
         }else{
-            return $this->render('//book/booklist', [
-                'message' => '登录失败',
+            return $this->render('login', [
+                'model' => $model,
             ]);
         }
 
