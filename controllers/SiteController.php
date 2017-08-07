@@ -91,14 +91,20 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if($model->load(Yii::$app->request->post())){
-            print_r(ArrayHelper::toArray($model));
-            $user = $model->getUser();
-            print_r(ArrayHelper::toArray($user));
-            if($user->validatePassword($model->password)){
-                return $this->render('//book/booklist',['message'=>'登录成功']);
-            }else{
-                return $this->render('//book/booklist',['message'=>'登录失败']);
+        if($model->load(Yii::$app->request->post())) {
+            //print_r(ArrayHelper::toArray($model));
+            //$user = $model->getUser();
+            //print_r(ArrayHelper::toArray($user));
+            //if($user->validatePassword($model->password)){
+            //return $this->render('//book/booklist',['message'=>'登录成功']);
+            //}else{
+            //return $this->render('//book/booklist',['message'=>'登录失败']);
+            //}
+
+            if ($model->login()) {
+                return $this->render('//book/booklist', ['message' => '登录成功']);
+            } else {
+                return $this->render('//book/booklist', ['message' => '登录失败']);
             }
 
         }else{
