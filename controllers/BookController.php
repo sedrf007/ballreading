@@ -26,6 +26,7 @@ class BookController extends Controller
 
         ]);
 //为什么有乱码呢
+        header('Content-type: text/html; charset=UTF8');
         echo GridView::widget([
             'dataProvider' => $dataprovider,
         ]);
