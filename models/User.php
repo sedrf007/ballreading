@@ -64,7 +64,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
-        $user = User::findOne(['username'=>$username]);
+        $user = static::findOne(['username'=>$username]);
 
         return $user;
     }
