@@ -100,11 +100,10 @@ class SiteController extends Controller
             //}else{
             //return $this->render('//book/booklist',['message'=>'登录失败']);
             //}
-
             if ($model->login()) {
                 return $this->render('//book/booklist', ['message' => '登录成功']);
             } else {
-                return $this->render('//book/booklist', ['message' => '登录失败']);
+                return $this->goBack();
             }
 
         }else{
