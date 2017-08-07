@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\library\helpers\HttpHelper;
 use app\models\EntryForm;
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -89,8 +90,14 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validatePassword($model)) {
-            return $this->render('//book/booklist',['message'=>'登录成功']);
+        if($model->load(Yii::$app->request->post())){
+            $user = $model->getUser();
+            if($user->validatePassword($model->password)){
+                return $this->render('//book/booklist',['message'=>'登录成功']);
+            }else{
+                return $this->render('//book/booklist',['message'=>'登录失败']);
+            }
+
         }else{
             return $this->render('login', [
                 'model' => $model,
