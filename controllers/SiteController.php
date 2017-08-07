@@ -89,7 +89,7 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validatePassword($model)) {
             return $this->render('//book/booklist',['message'=>'登录成功']);
         }else{
             return $this->render('login', [
