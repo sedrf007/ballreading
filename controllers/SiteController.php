@@ -90,10 +90,10 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->render('//book/booklist',['messege'=>'登录成功']);
+            return $this->render('//book/booklist',['message'=>'登录成功']);
         }else{
             return $this->render('//book/booklist', [
-                'messege' => '登录失败',
+                'message' => '登录失败',
             ]);
         }
 
