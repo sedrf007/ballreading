@@ -94,6 +94,7 @@ class SiteController extends Controller
         if($model->load(Yii::$app->request->post())){
             print_r(ArrayHelper::toArray($model));
             $user = $model->getUser();
+            print_r(ArrayHelper::toArray($user));
             if($user->validatePassword($model->password)){
                 return $this->render('//book/booklist',['message'=>'登录成功']);
             }else{
