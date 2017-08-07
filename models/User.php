@@ -2,7 +2,9 @@
 
 namespace app\models;
 
-class User extends \yii\base\Object implements \yii\web\IdentityInterface
+use yii\db\ActiveRecord;
+
+class User extends ActiveRecord implements \yii\web\IdentityInterface
 {
     public $id;
     public $username;
@@ -27,6 +29,10 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
         ],
     ];
 
+    public static function tableName()
+    {
+        return 'reader';
+    }
 
     /**
      * @inheritdoc
@@ -58,13 +64,9 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
-        foreach (self::$users as $user) {
-            if (strcasecmp($user['username'], $username) === 0) {
-                return new static($user);
-            }
-        }
+        $user = User::findOne(['username'=>$username]);
 
-        return null;
+        return $user;
     }
 
     /**

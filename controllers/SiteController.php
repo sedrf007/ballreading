@@ -75,7 +75,6 @@ class SiteController extends Controller
         }else{
             return $this->render('//user/login',['model'=>$model]);
         }
-
     }
 
     /**
@@ -91,11 +90,13 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->render('//book/booklist',['messege'=>'登录成功']);
+        }else{
+            return $this->render('//book/booklist', [
+                'messege' => '登录失败',
+            ]);
         }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+
     }
 
     /**
