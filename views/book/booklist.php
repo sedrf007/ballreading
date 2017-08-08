@@ -13,7 +13,7 @@ $this->registerJsFile('/js/jquery.min.js');
 $this->registerJsFile("/js/layer/layer.js");
 $this->registerJsFile("/js/book/booklist.js");
 
-$this->title = '书单';
+$this->title = 'AlphaYang的图书馆';
 ?>
 
 <div class="min-height-500 height-auto bg-color-f5">
