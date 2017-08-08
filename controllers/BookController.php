@@ -13,12 +13,30 @@ use app\library\helpers\HttpHelper;
 use app\models\Books;
 use app\models\Reader;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\grid\GridView;
 use yii\web\Controller;
 use Yii;
 
 class BookController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['book-list'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['book-list'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
     public function actionBookList()
     {
         $query = Books::find()->orderBy(['id'=>SORT_DESC])->asArray();
