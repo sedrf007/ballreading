@@ -48,7 +48,9 @@ $this->title = '书单';
             <td><?= $v['letter_num'] ?></td>
             <td><?= $v['taste_link'] ?></td>
             <td><?= $v['owner'] ?></td>
-            <td><?= $v['status'] ?></td>
+            <td><?php if($v['status']){echo '外借';}else{
+                echo '在库';
+                } ?></td>
             <td><?= $v['afterread'] ?></td>
             <?php } ?>
             <?php } ?>
