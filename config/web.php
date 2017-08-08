@@ -36,6 +36,10 @@ $config = [
                 'port' => '25',
                 'encryption' => 'tls',
             ],
+            'messageConfig'=>[
+                'charset'=>'UTF-8',
+                'from'=>['sedrf008@126.com'=>'admin']
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
