@@ -48,7 +48,7 @@ class BookController extends Controller
     {
         Yii::$app->mailer->compose()
             //->setFrom('sedrf008@126.com')
-            ->setTo('jichenjie@zuihuibao.com')
+            ->setTo('sedrf008@126.com')
             ->setSubject('AlphaYang图书馆')
             ->setTextBody('<br>借了都要还的')
             ->setHtmlBody('<b>HTML content</b>')
