@@ -101,7 +101,7 @@ class SiteController extends Controller
             //return $this->render('//book/booklist',['message'=>'登录失败']);
             //}
             if ($model->login()) {
-                return $this->render('//book/booklist', ['message' => '登录成功']);
+                HttpHelper::redirect('http://18.220.118.168/book/book-list');
             } else {
                 return $this->goBack();
             }
