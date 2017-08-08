@@ -45,7 +45,10 @@ $this->title = '书单';
             <td><?= $v['category'] ?></td>
             <td><?= $v['keyword'] ?></td>
             <td><?= '《'.$v['book_name'].'》' ?></td>
+            <?php if($v['origin_name']){?>
             <td><?= '《'.$v['origin_name'].'》' ?></td>
+            <?php }else{?>
+               <td></td><?php }?>
             <td><?= $v['author'] ?></td>
             <td><?= $v['translator'] ?></td>
             <td><?= $v['publishing_house'] ?></td>

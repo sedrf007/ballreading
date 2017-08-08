@@ -6,7 +6,7 @@ function postbook(id,action)
     $.ajax({
         type: 'get',
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-        url: '/book/post-book/?id='+id+'&action='+action,
+        url: '/book/post-book?id='+id+'&action='+action,
         success: function()
         {
             layer.msg('操作成功');
