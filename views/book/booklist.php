@@ -35,7 +35,7 @@ $this->title = '书单';
         <tbody>
         <?php if($dataProvider!=null){?>
             <?php foreach ($dataProvider->getModels() as $k=>$v){?>
-        <tr <?php if($k%3 == 0) {echo 'class="success"';}elseif($k%5 == 0){echo 'class="info"';}elseif($k%7 == 0){echo 'class="warning"';}elseif($k%9 == 0){echo 'class="danger"';}?>>
+        <tr <?php if($k%4 == 0) {echo 'class="success"';}elseif($k%3 == 0){echo 'class="info"';}elseif($k%2 == 0){echo 'class="warning"';}elseif($k%5 == 0){echo 'class="danger"';}?>>
             <td><?= $v['id'] ?></td>
             <td><?= $v['category'] ?></td>
             <td><?= $v['keyword'] ?></td>
