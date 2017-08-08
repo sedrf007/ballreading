@@ -13,6 +13,7 @@ use app\models\Books;
 use yii\data\ActiveDataProvider;
 use yii\grid\GridView;
 use yii\web\Controller;
+use Yii;
 
 class BookController extends Controller
 {
@@ -41,5 +42,16 @@ class BookController extends Controller
     public function actionSearchBook()
     {
 
+    }
+
+    public function actionPostBook()
+    {
+        Yii::$app->mailer->compose()
+            //->setFrom('sedrf008@126.com')
+            ->setTo('jichenjie@zuihuibao.com')
+            ->setSubject('AlphaYang图书馆')
+            ->setTextBody('<br>借了都要还的')
+            ->setHtmlBody('<b>HTML content</b>')
+            ->send();
     }
 }
