@@ -12,6 +12,17 @@ namespace app\models;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
+/**
+ * @property int    id
+ * @property string    email
+ * @property string    username
+ * @property string    password
+ * @property string    access_token
+ * @property string    auth_key
+ * @property string    address
+ * @property string    phone
+ */
+
 class Reader extends ActiveRecord implements \yii\web\IdentityInterface
 {
     private $auth_key = 'balltest';

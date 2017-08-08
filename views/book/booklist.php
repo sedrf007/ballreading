@@ -8,6 +8,8 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use app\assets\AppAsset;
+AppAsset::register($this);
+$this->registerJsFile("/js/layer/layer.js");
 
 $this->title = '书单';
 ?>
@@ -54,9 +56,9 @@ $this->title = '书单';
                 } ?></td>
             <td><?= $v['afterread'] ?></td>
             <td><?php if(!$v['status']){?>
-                    <button class="btn btn-info btn-sm">借阅</button>
+                    <button class="btn btn-info btn-sm" onclick="confirmpost(<?=$v['id']?>)">借阅</button>
                 <?php }else{?>
-                    <button class="btn btn-info btn-sm">归还</button>
+                    <button class="btn btn-info btn-sm" onclick="confirmwithdraw(<?=$v['id']?>")>归还</button>
                 <?php }?></td>
             <?php } ?>
             <?php } ?>
