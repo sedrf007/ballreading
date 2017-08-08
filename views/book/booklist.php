@@ -30,6 +30,7 @@ $this->title = '书单';
             <th>拥有者</th>
             <th>状态</th>
             <th>推荐笔记</th>
+            <th>借还</th>
         </tr>
         </thead>
         <tbody>
@@ -52,6 +53,11 @@ $this->title = '书单';
                 echo '在库';
                 } ?></td>
             <td><?= $v['afterread'] ?></td>
+            <td><?php if(!$v['status']){?>
+                    <button class="btn btn-info btn-sm">借阅</button>
+                <?php }else{?>
+                    <button class="btn btn-info btn-sm">归还</button>
+                <?php }?></td>
             <?php } ?>
             <?php } ?>
         </tbody>
