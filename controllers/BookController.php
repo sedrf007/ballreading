@@ -18,17 +18,28 @@ class BookController extends Controller
 {
     public function actionBookList()
     {
+        $query = Books::find()->orderBy(['id'=>SORT_DESC])->asArray();
+        $model = new Books();
         $dataprovider = new ActiveDataProvider([
-            'query'=>Books::find(),
+            'query'=>$query,
             'pagination'=>[
                 'pageSize'=>20,
             ],
 
         ]);
 //为什么有乱码呢
-        header('Content-type: text/html; charset=UTF8');
-        echo GridView::widget([
-            'dataProvider' => $dataprovider,
+//        header('Content-type: text/html; charset=UTF8');
+//        echo GridView::widget([
+//            'dataProvider' => $dataprovider,
+//        ]);
+        return $this->render('booklist',[
+            'dataProvider'=>$dataprovider,
+            'model'=>$model
         ]);
+    }
+
+    public function actionSearchBook()
+    {
+
     }
 }
