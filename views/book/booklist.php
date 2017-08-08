@@ -9,7 +9,9 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use app\assets\AppAsset;
 AppAsset::register($this);
+$this->registerJsFile('/js/jquery.min.js');
 $this->registerJsFile("/js/layer/layer.js");
+$this->registerJsFile("/js/book/booklist.js");
 
 $this->title = '书单';
 ?>
