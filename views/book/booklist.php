@@ -60,7 +60,7 @@ $this->title = '书单';
             <td><?php if(!$v['status']){?>
                     <button class="btn btn-info btn-sm" onclick="confirmpost(<?=$v['id']?>)">借阅</button>
                 <?php }else{?>
-                    <button class="btn btn-info btn-sm" onclick="confirmwithdraw(<?=$v['id']?>")>归还</button>
+                    <button class="btn btn-info btn-sm" onclick="confirmwithdraw(<?=$v['id']?>)">归还</button>
                 <?php }?></td>
             <?php } ?>
             <?php } ?>
