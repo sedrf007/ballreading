@@ -9,7 +9,7 @@ function postbook(id,action)
         url: '/book/post-book?id='+id+'&action='+action,
         success: function()
         {
-            layer.msg('操作成功');
+            layer.msg('操作成功',{title: false});
             window.location.reload();
         }
     });
@@ -18,11 +18,11 @@ function postbook(id,action)
 function confirmpost(id)
 {
     layer.confirm('是否确定要借阅此书？', {
-        btn: ['是','否'] //按钮
-    }, function(){
+        btn: ['是','否'], //按钮
+    },{title: false}, function(){
         postbook(id,1);
     }, function(){
-        layer.msg('放弃借阅', {
+        layer.msg('放弃借阅', {title: false},{
             time: 2000, //20s后自动关闭
             btn: ['确定']
         });
@@ -33,10 +33,10 @@ function confirmwithdraw(id)
 {
     layer.confirm('是否确定要归还此书？', {
         btn: ['是','否'] //按钮
-    }, function(){
+    }, {title: false},function(){
         postbook(id,0);
     }, function(){
-        layer.msg('放弃归还', {
+        layer.msg('放弃归还',{title: false}, {
             time: 2000, //20s后自动关闭
             btn: ['确定']
         });
