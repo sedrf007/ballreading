@@ -20,22 +20,22 @@ use Yii;
 
 class BookController extends Controller
 {
-//    public function behaviors()
-//    {
-//        return [
-//            'access' => [
-//                'class' => AccessControl::className(),
-//                'only' => ['book-list'],
-//                'rules' => [
-//                    [
-//                        'allow' => true,
-//                        'actions' => ['book-list'],
-//                        'roles' => ['@'],
-//                    ],
-//                ],
-//            ],
-//        ];
-//    }
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['book-list'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['book-list'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
 
     public function actionBookList()
     {
