@@ -35,7 +35,7 @@ function confirmwithdraw(id)
 {
     layer.confirm('是否确定要归还此书？', {
         btn: ['是','否'] //按钮
-    }, {title: false},function(){
+    },function(){
         postbook(id,0);
     }, function(){
         layer.msg('放弃归还', {
