@@ -3,6 +3,8 @@
  */
 function postbook(id,action)
 {
+    layer.closeAll(layer.index);
+    layer.load(1);
     $.ajax({
         type: 'get',
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
@@ -20,7 +22,6 @@ function confirmpost(id)
     layer.confirm('是否确定要借阅此书？', {
         btn: ['是','否'], //按钮
     }, function(){
-        layer.close(layer.index);
         postbook(id,1);
     }, function(){
         layer.msg('放弃借阅', {
