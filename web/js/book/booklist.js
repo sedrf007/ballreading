@@ -19,9 +19,8 @@ function confirmpost(id)
 {
     layer.confirm('是否确定要借阅此书？', {
         btn: ['是','否'], //按钮
-    },{title: false}, function(index){
+    }, function(){
         layer.close(layer.index);
-        layer.load(1)
         postbook(id,1);
     }, function(){
         layer.msg('放弃借阅', {
