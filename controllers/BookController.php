@@ -80,14 +80,15 @@ class BookController extends Controller
         $mail = Yii::$app->mailer->compose()
             //->setFrom('sedrf008@126.com')
             ->setTo($email)
-            ->setSubject('AlphaYang图书馆')
             ->setTextBody('<br>借了都要还的');
             if($status){
                 $mail->setHtmlBody('<br>借阅书籍：'.$book_name.'</br><br>借阅人:'.$userinfo->username.
                     '</br><br>地址：'.$userinfo->address.'</br><br>借阅人电话：'.$userinfo->phone.'</br>');
+                $mail->setSubject('AlphaYang图书馆借阅通知');
             }else{
                 $mail->setHtmlBody('<br>归还书籍：'.$book_name.'</br><br>归还人:'.$userinfo->username.
                     '</br><br>地址：'.$userinfo->address.'</br><br>归还人电话：'.$userinfo->phone.'</br>');
+                $mail->setSubject('AlphaYang图书馆归还通知');
             }
 
         $mail->send();

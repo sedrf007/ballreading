@@ -38,7 +38,7 @@ $config = [
             ],
             'messageConfig'=>[
                 'charset'=>'UTF-8',
-                'from'=>['sedrf008@126.com'=>'admin']
+                'from'=>['sedrf008@126.com'=>'AlphaYang的图书馆']
             ],
         ],
         'log' => [
