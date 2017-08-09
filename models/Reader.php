@@ -75,4 +75,9 @@ class Reader extends ActiveRecord implements \yii\web\IdentityInterface
         return $user;
     }
 
+    public function validatePassword($password)
+    {
+        return $this->password === $password;
+    }
+
 }
