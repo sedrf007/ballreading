@@ -3,12 +3,14 @@
  */
 function postbook(id,action)
 {
+    var index = layer.load(1);
     $.ajax({
         type: 'get',
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         url: '/book/post-book?id='+id+'&action='+action,
         success: function()
         {
+            layer.close(index);
             layer.msg('操作成功');
             window.location.reload();
         }
@@ -21,7 +23,6 @@ function confirmpost(id)
         btn: ['是','否'], //按钮
     },{title: false}, function(){
         postbook(id,1);
-        layer.load(0, {shade: false});
     }, function(){
         layer.msg('放弃借阅', {
             time: 2000, //20s后自动关闭
