@@ -3,14 +3,12 @@
  */
 function postbook(id,action)
 {
-    var index = layer.load(1);
     $.ajax({
         type: 'get',
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         url: '/book/post-book?id='+id+'&action='+action,
         success: function()
         {
-            layer.close(index);
             layer.msg('操作成功');
             window.location.reload();
         }
