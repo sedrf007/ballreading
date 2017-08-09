@@ -68,7 +68,7 @@ class BookController extends Controller
     {
         $id = HttpHelper::postOrGet('id');
         $status = HttpHelper::postOrGet('action');
-        $username = 'ball';
+        $username = Yii::$app->user->identity->username;
         $userinfo = Reader::findOne(['username'=>$username]);
 
         $book = Books::findOne(['id'=>$id]);
