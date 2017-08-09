@@ -15,7 +15,7 @@ function postbook(id,action)
             window.location.reload();
         },
         error:function () {
-            layer.msg('发送邮件失败');
+            layer.msg('发送邮件失败',{time:2000});
             window.location.reload();
         }
     });
@@ -29,7 +29,7 @@ function confirmpost(id)
         postbook(id,1);
     }, function(){
         layer.msg('放弃借阅', {
-            time: 2000, //20s后自动关闭
+            time: 2000, //2s后自动关闭
             btn: ['确定']
         });
     });
@@ -43,7 +43,7 @@ function confirmwithdraw(id)
         postbook(id,0);
     }, function(){
         layer.msg('放弃归还', {
-            time: 2000, //20s后自动关闭
+            time: 2000, //2s后自动关闭
             btn: ['确定']
         });
     });
