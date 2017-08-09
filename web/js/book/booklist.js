@@ -13,6 +13,10 @@ function postbook(id,action)
         {
             layer.msg('操作成功');
             window.location.reload();
+        },
+        error:function () {
+            layer.msg('发送邮件失败');
+            window.location.reload();
         }
     });
 }
