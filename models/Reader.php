@@ -68,4 +68,11 @@ class Reader extends ActiveRecord implements \yii\web\IdentityInterface
         return false;
     }
 
+    public static function findByUsername($username)
+    {
+        $user = static::findOne(['username'=>$username]);
+
+        return $user;
+    }
+
 }
