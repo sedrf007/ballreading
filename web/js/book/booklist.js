@@ -51,5 +51,19 @@ function confirmwithdraw(id)
 
 function getcomment()
 {
-    alert($('#book_id').html());
+    var id = ($('#book_id').html());
+    var p = {
+        id:id
+    };
+    $.ajax({
+        type: 'post',
+        data: p,
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        url: '/book/get-comment',
+        dataType: 'json',
+        success: function(data)
+        {
+            $('.modal-content').html(data['afterread']);
+        }
+    });
 }

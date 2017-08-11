@@ -93,4 +93,16 @@ class BookController extends Controller
 
         $mail->send();
     }
+
+    public function actionGetComment()
+    {
+        $id = HttpHelper::postOrGet('id');
+
+        $book = Books::findOne(['id'=>$id]);
+        $comment = $book->afterread;
+        $data['afterread'] = $comment;
+
+        return json_encode($data);
+
+    }
 }
