@@ -18,7 +18,7 @@ $this->title = 'AlphaYang的图书馆';
 ?>
 
 <div class="min-height-300 height-auto">
-    <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#input">添加书籍</button>
+    <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#input">添加书籍<span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span></button>
 </div>
 
 <div class="min-height-500 height-auto bg-color-f5">
@@ -104,33 +104,55 @@ $this->title = 'AlphaYang的图书馆';
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="gridSystemModalLabel">添加书籍</h4>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4">.col-md-4</div>
-                    <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-                    <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-9">
-                        Level 1: .col-sm-9
-                        <div class="row">
-                            <div class="col-xs-8 col-sm-6">
-                                Level 2: .col-xs-8 .col-sm-6
-                            </div>
-                            <div class="col-xs-4 col-sm-6">
-                                Level 2: .col-xs-4 .col-sm-6
-                            </div>
-                        </div>
+                <form>
+                    <div class="form-group">
+                        <label for="book_name">书名</label>
+                        <input type="text" class="form-control" id="book_name" placeholder="百年孤独">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="origin_name">书籍原名</label>
+                        <input type="text" class="form-control" id="origin_name" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">著者</label>
+                        <input type="text" class="form-control" id="author">
+                    </div>
+                    <div class="form-group">
+                        <label for="translator">译者</label>
+                        <input type="text" class="form-control" id="translator">
+                    </div>
+                    <div class="form-group">
+                        <label for="publishing_house">出版社</label>
+                        <input type="text" class="form-control" id="publishing_house">
+                    </div>
+                    <div class="form-group">
+                        <label for="publish_no">出版版次</label>
+                        <input type="text" class="form-control" id="publish_no">
+                    </div>
+                    <div class="form-group">
+                        <label for="letter_num">字数</label>
+                        <input type="text" class="form-control" id="letter_num">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">分类</label>
+                        <input type="text" class="form-control" id="category">
+                    </div>
+                    <div class="form-group">
+                        <label for="keyword">关键字</label>
+                        <input type="text" class="form-control" id="keyword">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampltaste_linkeInputEmail1">试读连接</label>
+                        <input type="text" class="form-control" id="taste_link">
+                    </div>
+                    <div class="form-group">
+                        <label for="afterread">推荐笔记</label>
+                        <input type="email" class="form-control" id="afterread">
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
