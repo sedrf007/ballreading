@@ -18,7 +18,7 @@ $this->title = 'AlphaYang的图书馆';
 ?>
 
 <div class="min-height-300 height-auto">
-    <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#input">添加书籍<span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span></button>
+    <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#input">添加书籍</button>
 </div>
 
 <div class="min-height-500 height-auto bg-color-f5">
