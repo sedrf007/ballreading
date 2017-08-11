@@ -59,7 +59,8 @@ $this->title = 'AlphaYang的图书馆';
             <td><?php if($v['status']){echo '外借';}else{
                 echo '在库';
                 } ?></td>
-            <td><?= $v['afterread'] ?></td>
+<!--            <td>--><?//= $v['afterread'] ?><!--</td>-->
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button></td>
             <td><?php if(!$v['status']){?>
                     <button class="btn btn-info btn-sm" onclick="confirmpost(<?=$v['id']?>)">借阅</button>
                 <?php }else{?>
