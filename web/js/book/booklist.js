@@ -48,3 +48,8 @@ function confirmwithdraw(id)
         });
     });
 }
+
+function getcomment()
+{
+    alert($('#book_id').html());
+}

@@ -42,7 +42,7 @@ $this->title = 'AlphaYang的图书馆';
         <?php if($dataProvider!=null){?>
             <?php foreach ($dataProvider->getModels() as $k=>$v){?>
         <tr <?php if($k%4 == 0) {echo 'class="success"';}elseif($k%3 == 0){echo 'class="info"';}elseif($k%2 == 0){echo 'class="warning"';}elseif($k%5 == 0){echo 'class="danger"';}?>>
-            <td><?= $v['id'] ?></td>
+            <td id="book_id"><?= $v['id'] ?></td>
             <td><?= $v['category'] ?></td>
             <td><?= $v['keyword'] ?></td>
             <td><?= '《'.$v['book_name'].'》' ?></td>
@@ -61,7 +61,7 @@ $this->title = 'AlphaYang的图书馆';
                 echo '在库';
                 } ?></td>
 <!--            <td>--><?//= $v['afterread'] ?><!--</td>-->
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">查看</button></td>
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" onclick="getcomment()">查看</button></td>
             <td><?php if(!$v['status']){?>
                     <button class="btn btn-success btn-sm" onclick="confirmpost(<?=$v['id']?>)">借阅</button>
                 <?php }else{?>
