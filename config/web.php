@@ -30,10 +30,10 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'pop.126.com',  //每种邮箱的host配置不一样
+                'host' => 'smtp.126.com',  //每种邮箱的host配置不一样
                 'username' => 'sedrf008@126.com',
                 'password' => 'z1993319',
-                'port' => '110',
+                'port' => '25',
                 'encryption' => 'tls',
             ],
             'messageConfig'=>[
