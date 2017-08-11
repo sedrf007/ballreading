@@ -63,9 +63,9 @@ $this->title = 'AlphaYang的图书馆';
 <!--            <td>--><?//= $v['afterread'] ?><!--</td>-->
             <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">查看</button></td>
             <td><?php if(!$v['status']){?>
-                    <button class="btn btn-info btn-sm" onclick="confirmpost(<?=$v['id']?>)">借阅</button>
+                    <button class="btn btn-success btn-sm" onclick="confirmpost(<?=$v['id']?>)">借阅</button>
                 <?php }else{?>
-                    <button class="btn btn-info btn-sm" onclick="confirmwithdraw(<?=$v['id']?>)">归还</button>
+                    <button class="btn btn-success btn-sm" onclick="confirmwithdraw(<?=$v['id']?>)">归还</button>
                 <?php }?></td>
             <?php } ?>
             <?php } ?>
