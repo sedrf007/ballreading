@@ -61,7 +61,7 @@ $this->title = 'AlphaYang的图书馆';
                 echo '在库';
                 } ?></td>
 <!--            <td>--><?//= $v['afterread'] ?><!--</td>-->
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button></td>
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">查看</button></td>
             <td><?php if(!$v['status']){?>
                     <button class="btn btn-info btn-sm" onclick="confirmpost(<?=$v['id']?>)">借阅</button>
                 <?php }else{?>
@@ -87,5 +87,12 @@ $this->title = 'AlphaYang的图书馆';
             ]);
         }
         ?>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            ...
+        </div>
     </div>
 </div>
