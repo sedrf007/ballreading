@@ -110,7 +110,7 @@ $this->title = 'AlphaYang的图书馆';
                 <form>
                     <div class="form-group">
                         <label for="book_name">书名</label>
-                        <input type="text" class="form-control" id="book_name" placeholder="百年孤独">
+                        <input type="text" class="form-control" id="book_name" placeholder="百年孤独" width=100px>
                     </div>
                     <div class="form-group">
                         <label for="origin_name">书籍原名</label>
