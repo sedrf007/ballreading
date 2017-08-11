@@ -18,7 +18,7 @@ $this->title = 'AlphaYang的图书馆';
 ?>
 
 <div class="min-height-300 height-auto">
-    <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#gridSystemModal">添加书籍</button>
+    <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#input">添加书籍</button>
 </div>
 
 <div class="min-height-500 height-auto bg-color-f5">
@@ -99,7 +99,7 @@ $this->title = 'AlphaYang的图书馆';
         </div>
     </div>
 </div>
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="input">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
