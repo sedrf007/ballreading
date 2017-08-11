@@ -63,7 +63,7 @@ function getcomment()
         dataType: 'json',
         success: function(data)
         {
-            $('.modal-content').html(data['afterread']);
+            $('.modal-content').html('<br>'+data['afterread']+'<br>');
         }
     });
 }
