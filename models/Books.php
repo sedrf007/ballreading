@@ -29,9 +29,54 @@ use yii\db\ActiveRecord;
 
 class Books extends ActiveRecord
 {
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        $scenarios['add'] = [
+            'category',
+            'keyword',
+            'book_name',
+            'origin_name',
+            'author',
+            'translator',
+            'publishing_house',
+            'publish_no',
+            'letter_num',
+            'taste_link',
+            'owner',
+            'afterread',
+        ];
+
+        return $scenarios;
+    }
+
     public function owner_email(){
         $owner = $this->owner;
         $read = Reader::findOne(['username'=>$owner]);
         return $read->email;
+    }
+
+    public function rules()
+    {
+        return [
+            [
+                [
+                    'category',
+                    'keyword',
+                    'book_name',
+                    'author',
+                    'publishing_house',
+                    'owner'
+                ],
+                'required',
+                'on' => ['create'],
+                'message' => '请填写完全的书籍信息！',
+            ],
+        ];
+    }
+
+    public function safeAttributes()
+    {
+        return $this->attributes();
     }
 }

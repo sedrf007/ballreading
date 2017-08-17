@@ -110,42 +110,42 @@ $this->title = 'AlphaYang的图书馆';
                 <form>
                     <div class="form-group">
                         <label for="book_name">书名</label>
-                        <input type="text" class="form-control" id="book_name" placeholder="百年孤独" width=100px>
+                        <input type="text" class="form-control" id="book_name" placeholder="全球通史·上(必填)" width=100px>
                     </div>
                     <div class="form-group">
                         <label for="origin_name">书籍原名</label>
-                        <input type="text" class="form-control" id="origin_name" placeholder="Password">
+                        <input type="text" class="form-control" id="origin_name" placeholder="A Global History">
                     </div>
                     <div class="form-group">
                         <label for="author">著者</label>
-                        <input type="text" class="form-control" id="author">
+                        <input type="text" class="form-control" id="author" placeholder="斯塔夫里阿诺斯(必填)">
                     </div>
                     <div class="form-group">
                         <label for="translator">译者</label>
-                        <input type="text" class="form-control" id="translator">
+                        <input type="text" class="form-control" id="translator" placeholder="吴象婴，梁赤民，董书慧">
                     </div>
                     <div class="form-group">
                         <label for="publishing_house">出版社</label>
-                        <input type="text" class="form-control" id="publishing_house">
+                        <input type="text" class="form-control" id="publishing_house" placeholder="北京大学出版社(必填)">
                     </div>
                     <div class="form-group">
                         <label for="publish_no">出版版次</label>
-                        <input type="text" class="form-control" id="publish_no">
+                        <input type="text" class="form-control" id="publish_no" placeholder="2011.1">
                     </div>
                     <div class="form-group">
                         <label for="letter_num">字数</label>
-                        <input type="text" class="form-control" id="letter_num">
+                        <input type="text" class="form-control" id="letter_num" placeholder="46">
                     </div>
                     <div class="form-group">
                         <label for="category">分类</label>
-                        <input type="text" class="form-control" id="category">
+                        <input type="text" class="form-control" id="category" placeholder="历史(必填)">
                     </div>
                     <div class="form-group">
                         <label for="keyword">关键字</label>
-                        <input type="text" class="form-control" id="keyword">
+                        <input type="text" class="form-control" id="keyword" placeholder="通史(必填)">
                     </div>
                     <div class="form-group">
-                        <label for="exampltaste_linkeInputEmail1">试读连接</label>
+                        <label for="taste_link">试读连接</label>
                         <input type="text" class="form-control" id="taste_link">
                     </div>
                     <div class="form-group">
@@ -156,7 +156,7 @@ $this->title = 'AlphaYang的图书馆';
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="addbook()">Save changes</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

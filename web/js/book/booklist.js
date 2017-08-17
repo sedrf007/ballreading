@@ -67,3 +67,44 @@ function getcomment()
         }
     });
 }
+
+function addbook() {
+    var book_name = ($('#book_name').text());
+    var origin_name = ($('#origin_name').text());
+    var author = ($('#author').text());
+    var translator = ($('#translator').text());
+    var publishing_house = ($('#publishing_house').text());
+    var publish_no = ($('#publish_no').text());
+    var letter_num = ($('#letter_num').text());
+    var category = ($('#category').text());
+    var keyword = ($('#keyword').text());
+    var taste_link = ($('#taste_link').text());
+    var afterread = ($('#afterread').text());
+
+    var p = {
+        book_name : book_name,
+        origin_name : origin_name,
+        author : author,
+        translator : translator,
+        publishing_house : publishing_house,
+        publish_no : publish_no,
+        letter_num : letter_num,
+        category : category,
+        keyword : keyword,
+        taste_link : taste_link,
+        afterread : afterread
+    };
+    console.log(p);
+    $.ajax({
+        type: 'post',
+        data: p,
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        url: '/book/add-book',
+        dataType: 'json',
+        success: function()
+        {
+            layer.msg('添加成功！');
+            window.location.reload();
+        }
+    });
+}

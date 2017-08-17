@@ -10,6 +10,7 @@ namespace app\controllers;
 
 
 use app\library\helpers\HttpHelper;
+use app\library\helpers\OutputHelper;
 use app\models\Books;
 use app\models\Reader;
 use yii\data\ActiveDataProvider;
@@ -104,5 +105,16 @@ class BookController extends Controller
 
         return json_encode($data);
 
+    }
+
+    public function actionAddBooks()
+    {
+        $input = HttpHelper::postOrGets();
+        $model = new Books(['scenario' => 'create']);
+        $model ->load($input,'');
+        $model ->author = Yii::$app->user->identity->username;
+        $model ->validate();
+        $model ->save();
+        return OutputHelper::makeSuccOutput([]);
     }
 }
