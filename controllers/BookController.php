@@ -113,7 +113,7 @@ class BookController extends Controller
         $model = new Books(['scenario' => 'add']);
         $model ->load($input,'');
         $model ->author = Yii::$app->user->identity->username;
-        //$model ->validate();
+        $model ->validate();
         $model ->save();
         return OutputHelper::makeSuccOutput([]);
     }
