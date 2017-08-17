@@ -107,7 +107,7 @@ class BookController extends Controller
 
     }
 
-    public function actionAddBooks()
+    public function actionAddBook()
     {
         $input = HttpHelper::postOrGets();
         $model = new Books(['scenario' => 'create']);
