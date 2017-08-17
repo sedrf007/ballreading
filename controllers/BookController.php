@@ -110,7 +110,7 @@ class BookController extends Controller
     public function actionAddBook()
     {
         $input = HttpHelper::postOrGets();
-        $model = new Books(['scenario' => 'create']);
+        $model = new Books(['scenario' => 'add']);
         $model ->load($input,'');
         $model ->author = Yii::$app->user->identity->username;
         //$model ->validate();
