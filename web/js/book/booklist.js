@@ -69,17 +69,21 @@ function getcomment()
 }
 
 function addbook() {
-    var book_name = ($('#book_name').text());
-    var origin_name = ($('#origin_name').text());
-    var author = ($('#author').text());
-    var translator = ($('#translator').text());
-    var publishing_house = ($('#publishing_house').text());
-    var publish_no = ($('#publish_no').text());
-    var letter_num = ($('#letter_num').text());
-    var category = ($('#category').text());
-    var keyword = ($('#keyword').text());
-    var taste_link = ($('#taste_link').text());
-    var afterread = ($('#afterread').text());
+    var book_name = ($('#book_name').val());
+    var origin_name = ($('#origin_name').val());
+    var author = ($('#author').val());
+    var translator = ($('#translator').val());
+    var publishing_house = ($('#publishing_house').val());
+    var publish_no = ($('#publish_no').val());
+    var letter_num = ($('#letter_num').val());
+    var category = ($('#category').val());
+    var keyword = ($('#keyword').val());
+    var taste_link = ($('#taste_link').val());
+    var afterread = ($('#afterread').val());
+
+    if(letter_num.length == 0){
+        letter_num = 0;
+    }
 
     var p = {
         book_name : book_name,
