@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 
+use app\library\helpers\HttpHelper;
 use app\models\Articles;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -35,6 +36,15 @@ class NovController extends Controller{
             'dataProvider'=>$dataprovider,
             'model'=>$model
         ]);
+    }
+
+    public function actionArticleDetail()
+    {
+        $id = HttpHelper::postOrGet('id');
+        $data = Articles::find()->select(['text','book_no','writer','title','length'])->where(['id'=>$id])->asArray()->one();
+
+        return $this->render('articledetail',$data);
+
     }
 
 }

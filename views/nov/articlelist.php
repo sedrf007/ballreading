@@ -9,7 +9,7 @@ use app\assets\AppAsset;
 AppAsset::register($this);
 $this->registerJsFile('/js/jquery.min.js');
 $this->registerJsFile("/js/layer/layer.js");
-$this->registerJsFile("/js/book/booklist.js");
+$this->registerJsFile("/js/nov/article.js");
 $this->registerJsFile("/js/bootstrap.min.js");
 
 $this->title = 'AlphaYang的图书馆';
@@ -34,7 +34,7 @@ $this->title = 'AlphaYang的图书馆';
         <?php foreach ($dataProvider->getModels() as $k=>$v){?>
         <tr <?php if($k%4 == 0) {echo 'class="success"';}elseif($k%3 == 0){echo 'class="info"';}elseif($k%2 == 0){echo 'class="warning"';}elseif($k%5 == 0){echo 'class="danger"';}?>>
             <td id="book_id"><?= $v['id'] ?></td>
-            <td><?= $v['title'] ?></td>
+            <td onclick="articledetail()"><?= $v['title']?></td>
             <td><?= 'NO.0'.$v['book_no'] ?></td>
             <td><?= $v['writer'] ?></td>
             <td><?= $v['length'] ?></td>
