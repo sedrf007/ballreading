@@ -15,5 +15,6 @@ $this->registerJsFile("/js/bootstrap.min.js");
 $this->title = 'AlphaYang的图书馆';
 ?>
 <div class="page-header">
-  <h1><?= $title?><small><?'作者:'.$writer?></small></h1>
+    <h1><?= $title?><small><?'作者:'.$writer?></small></h1>
+    <p><?= $text?></p>
 </div>
