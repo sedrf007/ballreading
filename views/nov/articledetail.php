@@ -15,8 +15,22 @@ $this->registerJsFile("/js/bootstrap.min.js");
 $this->title = 'AlphaYang的图书馆';
 ?>
 <div class="page-header">
-    <h1><?= $title?><small><?'作者:'.$writer?></small></h1>
+    <h1><?= $title?><small><?='作者:'.$writer?></small></h1>
     <p></p>
     <p></p>
-    <div class="container"><p><?= $text?></p></div>
+    <div class="container">
+        <p><?= $text?></p>
+
+    </div>
+    <?php if($comments){foreach ($comments as $k=>$v){?>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><?=$v['user'].'      '.$v['create_time']?></div>
+        <div class="panel-body">
+            <p><?=$v['comment']?></p>
+        </div>
+
+    </div>
+    <?php}?>
+    <?php}?>
 </div>

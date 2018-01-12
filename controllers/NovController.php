@@ -11,6 +11,7 @@ namespace app\controllers;
 
 use app\library\helpers\HttpHelper;
 use app\models\Articles;
+use app\models\Comments;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 
@@ -42,6 +43,8 @@ class NovController extends Controller{
     {
         $id = HttpHelper::postOrGet('id');
         $data = Articles::find()->select(['text','book_no','writer','title','length'])->where(['id'=>$id])->asArray()->one();
+        $comments = Comments::find()->select(['comment','user','create_time'])->where(['article_id'=>$id])->orderBy(['create_time'=>SORT_DESC])->asArray()->all();
+        $data['comments'] = $comments;
 
         return $this->render('articledetail',$data);
 
