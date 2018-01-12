@@ -16,5 +16,7 @@ $this->title = 'AlphaYang的图书馆';
 ?>
 <div class="page-header">
     <h1><?= $title?><small><?'作者:'.$writer?></small></h1>
-    <p><?= $text?></p>
+    <p></p>
+    <p></p>
+    <div class="container"><p><?= $text?></p></div>
 </div>
