@@ -34,7 +34,7 @@ $this->title = 'AlphaYang的图书馆';
         <?php foreach ($dataProvider->getModels() as $k=>$v){?>
         <tr <?php if($k%4 == 0) {echo 'class="success"';}elseif($k%3 == 0){echo 'class="info"';}elseif($k%2 == 0){echo 'class="warning"';}elseif($k%5 == 0){echo 'class="danger"';}?>>
             <td id="book_id"><?= $v['id'] ?></td>
-            <td><a href="/nov/article-detail?id=".<?=$v['id']?>><?= $v['title']?><\a></td>
+            <td><a href="/nov/article-detail?id=<?=$v['id']?>"><?= $v['title']?></td>
             <td><?= 'NO.0'.$v['book_no'] ?></td>
             <td><?= $v['writer'] ?></td>
             <td><?= $v['length'] ?></td>
