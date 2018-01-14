@@ -11,6 +11,7 @@ $this->registerJsFile('/js/jquery.min.js');
 $this->registerJsFile("/js/layer/layer.js");
 $this->registerJsFile("/js/nov/article.js");
 $this->registerJsFile("/js/bootstrap.min.js");
+$this->registerCssFile("/css/bootstrap.min.css");
 
 $this->title = 'AlphaYang的图书馆';
 ?>
