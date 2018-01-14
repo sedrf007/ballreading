@@ -32,5 +32,7 @@ $this->title = 'AlphaYang的图书馆';
         </div>
 
     </div>
-<?php}?>
-<?php}?>
+<?php }
+?>
+<?php }
+?>
