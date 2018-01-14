@@ -21,18 +21,20 @@ $this->title = 'AlphaYang的图书馆';
 <p></p>
 <div class="container">
     <p><?= $text?></p>
+    <?php if($comments){foreach ($comments as $k=>$v){?>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><?=$v['user'].'      '.$v['create_time']?></div>
+            <div class="panel-body">
+                <p><?=$v['comment']?></p>
+            </div>
+
+        </div>
+    <?php }
+        ?>
+    <?php }
+
+    ?>
 
 </div>
-<?php if($comments){foreach ($comments as $k=>$v){?>
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading"><?=$v['user'].'      '.$v['create_time']?></div>
-        <div class="panel-body">
-            <p><?=$v['comment']?></p>
-        </div>
 
-    </div>
-<?php }
-?>
-<?php }
-?>
