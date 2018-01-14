@@ -45,7 +45,7 @@ class NovController extends Controller{
         $data = Articles::find()->select(['text','book_no','writer','title','length'])->where(['id'=>$id])->asArray()->one();
         $comments = Comments::find()->select(['comment','user','create_time'])->where(['article_id'=>$id])->orderBy(['create_time'=>SORT_DESC])->asArray()->all();
         $data['comments'] = $comments;
-        print_r($data['comments']);
+        //print_r($data['comments']);
 
         return $this->render('articledetail',$data);
 
