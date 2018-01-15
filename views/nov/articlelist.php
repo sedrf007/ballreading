@@ -26,7 +26,7 @@ $this->title = 'NOV云读书';
             <th>标题</th>
             <th>刊号</th>
             <th>作者</th>
-            <th>字数（万）</th>
+            <th>字数</th>
             <th>评论数</th>
         </tr>
         </thead>
