@@ -23,7 +23,7 @@ function articledetail()
 function addcomment(id)
 {
     var comment = ($('#comment').val());
-    if(comment.length == 0){
+    if(toString(comment) == ''){
         layer.error('评论不能为空');
     }else{
         var p = {
