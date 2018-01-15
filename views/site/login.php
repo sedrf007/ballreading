@@ -10,8 +10,8 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Login';
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-    <img src="/web/img/tomson.jpg">
+    <h1><?= 'NOV云读书' ?></h1>
+    
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'layout' => 'horizontal',
