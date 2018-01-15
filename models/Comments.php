@@ -19,5 +19,17 @@ use yii\db\ActiveRecord;
  */
 class Comments extends ActiveRecord
 {
-
+    public function rules()
+    {
+        return [
+            [
+                [
+                    'comment'
+                ],
+                'required',
+                'on' => ['add'],
+                'message' => '评论不能为空！',
+            ],
+        ];
+    }
 }

@@ -77,7 +77,7 @@ class NovController extends Controller
         $username = Yii::$app->user->identity->username;
         $comment = HttpHelper::postOrGet('comment');
 
-        $com = new Comments();
+        $com = new Comments(['scenario' => 'add']);
         $com->article_id = $id;
         $com->user = $username;
         $com->comment = $comment;
