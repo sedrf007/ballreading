@@ -11,7 +11,7 @@ $this->title = 'Login';
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAABXAQMAAABLBksvAAAABlBMVEX///8AAABVwtN+AAAAr0lEQVQ4jc3RvxGDIBQG8M+joNMFvMsadKzkBAQX0JXoWIM7Fkg6Cy4vEBsL89n6qh8F7y9wtxhEvMkiibiHWkV5UNu82LxuF56juvSCfOFaNxx6OHPtfznMcur23A6rOPMQ1cvkj6XexmeE2+v+MczDG3kH5iEmZ9UcQNzr7PXYxUT8+1Imzdz2gOI0iOs+vSldoG63G/fkxPVwT0ncsyQH6nbfMgHErf+aNjLfK77THQE7RuLNcwAAAABJRU5ErkJggg==">
+    <img src="/web/img/tomson.jpg">
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'layout' => 'horizontal',
