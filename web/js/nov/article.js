@@ -36,12 +36,17 @@ function addcomment(id)
         success: function(data)
         {
             console.log(data);
-            layer.msg('评论成功！');
-            window.location.reload();
+            if(data.return_code == '0'){
+                layer.msg('评论成功！');
+                window.location.reload();
+            }else{
+                layer.msg(data.return_message,{time:2000});
+                window.location.reload();
+            }
+
         },
         error:function (return_message) {
-            layer.msg(return_message,{time:2000});
-            window.location.reload();
+
         }
     });
 
