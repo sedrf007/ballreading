@@ -33,8 +33,9 @@ function addcomment(id)
         contentType:"application/x-www-form-urlencoded;charset=UTF-8",
         url: '/nov/add-comment',
         dataType: 'json',
-        success: function()
+        success: function(data)
         {
+            console.log(data);
             layer.msg('评论成功！');
             window.location.reload();
         },
