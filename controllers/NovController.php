@@ -8,14 +8,34 @@
 
 namespace app\controllers;
 
-
+use app\library\helpers\OutputHelper;
+use Yii;
 use app\library\helpers\HttpHelper;
 use app\models\Articles;
 use app\models\Comments;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 
-class NovController extends Controller{
+class NovController extends Controller
+{
+
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['article-list','article-detail'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['article-list','article-detail'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
 
     public function actionArticleList()
     {
@@ -42,13 +62,28 @@ class NovController extends Controller{
     public function actionArticleDetail()
     {
         $id = HttpHelper::postOrGet('id');
-        $data = Articles::find()->select(['text','book_no','writer','title','length'])->where(['id'=>$id])->asArray()->one();
+        $data = Articles::find()->select(['id','text','book_no','writer','title','length'])->where(['id'=>$id])->asArray()->one();
         $comments = Comments::find()->select(['comment','user','create_time'])->where(['article_id'=>$id])->orderBy(['create_time'=>SORT_DESC])->asArray()->all();
         $data['comments'] = $comments;
         //print_r($data['comments']);
 
         return $this->render('articledetail',$data);
 
+    }
+
+    public function actionAddComment()
+    {
+        $id = HttpHelper::postOrGet('id');
+        $username = Yii::$app->user->identity->username;
+        $comment = HttpHelper::postOrGet('comment');
+
+        $com = new Comments();
+        $com->article_id = $id;
+        $com->user = $username;
+        $com->comment = $comment;
+        $com->save();
+
+        return OutputHelper::makeSuccOutput([]);
     }
 
 }

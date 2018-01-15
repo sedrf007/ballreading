@@ -35,8 +35,8 @@ $this->title = 'AlphaYang的图书馆';
     ?>
 <?php }
 ?>
-<textarea class="form-control" rows="3" placeholder="您的评论..."></textarea>
-<button class="btn btn-primary" type="submit" style="float: right">提交</button>
+<textarea id="comment" class="form-control" rows="6" placeholder="您的评论..."></textarea>
+<button class="btn btn-primary" type="submit" style="float: right" onclick="addcomment(<?=$id?>)">提交</button>
 
 
 

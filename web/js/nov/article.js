@@ -19,3 +19,25 @@ function articledetail()
         }
     });
 }
+
+function addcomment(id)
+{
+    var comment = ($('#comment').val());
+    var p = {
+        id:id,
+        comment:comment
+    };
+    $.ajax({
+        type: 'post',
+        data: p,
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        url: '/nov/add-comment',
+        dataType: 'json',
+        success: function()
+        {
+            layer.msg('评论成功！');
+            window.location.reload();
+        }
+    });
+
+}
