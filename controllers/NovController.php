@@ -83,6 +83,10 @@ class NovController extends Controller
         $com->comment = $comment;
         $com->save();
 
+        $article = Articles::findOne(['id'=>$id]);
+        $article->comment_num = $article->comment_num+1;
+        $article->save();
+
         return OutputHelper::makeSuccOutput([]);
     }
 
