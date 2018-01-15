@@ -39,7 +39,7 @@ $this->title = 'AlphaYang的图书馆';
             <td><?= 'NO.0'.$v['book_no'] ?></td>
             <td><?= $v['writer'] ?></td>
             <td><?= $v['length'] ?></td>
-            <td><?= 1 ?></td>
+            <td><?= $v['comment_num'] ?></td>
             <?php }?>
             <?php }?>
         </tbody>
