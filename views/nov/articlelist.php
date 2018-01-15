@@ -13,7 +13,7 @@ $this->registerJsFile("/js/nov/article.js");
 $this->registerJsFile("/js/bootstrap.min.js");
 $this->registerCssFile("/css/bootstrap.min.css");
 
-$this->title = 'AlphaYang的图书馆';
+$this->title = 'NOV云读书';
 ?>
 <div class="min-height-300 height-auto">
     <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#input">添加书籍</button>

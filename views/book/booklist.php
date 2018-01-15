@@ -14,7 +14,7 @@ $this->registerJsFile("/js/layer/layer.js");
 $this->registerJsFile("/js/book/booklist.js");
 $this->registerJsFile("/js/bootstrap.min.js");
 
-$this->title = 'AlphaYang的图书馆';
+$this->title = 'NOV云读书';
 ?>
 
 <div class="min-height-300 height-auto">

@@ -13,7 +13,7 @@ $this->registerJsFile("/js/nov/article.js");
 $this->registerJsFile("/js/bootstrap.min.js");
 $this->registerCssFile("/css/bootstrap.min.css");
 
-$this->title = 'AlphaYang的图书馆';
+$this->title = 'NOV云读书';
 ?>
 <div class="page-header">
     <h1><?= $title?><small><?='作者:'.$writer?></small></h1>
