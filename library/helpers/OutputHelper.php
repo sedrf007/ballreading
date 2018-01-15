@@ -26,7 +26,7 @@ class OutputHelper
         if (!empty($pagerInfo)) {
             $ret['pager_info'] = $pagerInfo;
         }
-        return $ret;
+        return json_encode($ret);
     }
 
     public static function makeSuccOutput($data = [], $pagerInfo = [])

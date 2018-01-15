@@ -38,8 +38,8 @@ function addcomment(id)
             layer.msg('评论成功！');
             window.location.reload();
         },
-        error:function (data) {
-            layer.msg(data.message,{time:2000});
+        error:function (return_message) {
+            layer.msg(return_message,{time:2000});
             window.location.reload();
         }
     });
