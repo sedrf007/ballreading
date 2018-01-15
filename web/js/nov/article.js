@@ -23,24 +23,25 @@ function articledetail()
 function addcomment(id)
 {
     var comment = ($('#comment').val());
-    if(toString(comment) == ''){
-        layer.error('评论不能为空');
-    }else{
-        var p = {
-            id:id,
-            comment:comment
-        };
-        $.ajax({
-            type: 'post',
-            data: p,
-            contentType:"application/x-www-form-urlencoded;charset=UTF-8",
-            url: '/nov/add-comment',
-            dataType: 'json',
-            success: function()
-            {
-                layer.msg('评论成功！');
-                window.location.reload();
-            }
-        });
-    }
+    var p = {
+        id:id,
+        comment:comment
+    };
+    $.ajax({
+        type: 'post',
+        data: p,
+        contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+        url: '/nov/add-comment',
+        dataType: 'json',
+        success: function()
+        {
+            layer.msg('评论成功！');
+            window.location.reload();
+        },
+        error:function (data) {
+            layer.msg(data.message,{time:2000});
+            window.location.reload();
+        }
+    });
+
 }

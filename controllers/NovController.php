@@ -77,17 +77,22 @@ class NovController extends Controller
         $username = Yii::$app->user->identity->username;
         $comment = HttpHelper::postOrGet('comment');
 
-        $com = new Comments(['scenario' => 'add']);
-        $com->article_id = $id;
-        $com->user = $username;
-        $com->comment = $comment;
-        $com->save();
+        if($comment){
+            $com = new Comments(['scenario' => 'add']);
+            $com->article_id = $id;
+            $com->user = $username;
+            $com->comment = $comment;
+            $com->save();
 
-        $article = Articles::findOne(['id'=>$id]);
-        $article->comment_num = $article->comment_num+1;
-        $article->save();
+            $article = Articles::findOne(['id'=>$id]);
+            $article->comment_num = $article->comment_num+1;
+            $article->save();
 
-        return OutputHelper::makeSuccOutput([]);
+            return OutputHelper::makeSuccOutput([]);
+        }else{
+            return OutputHelper::makeOutput(-1001,'评论不能为空！');
+        }
+
     }
 
 }
