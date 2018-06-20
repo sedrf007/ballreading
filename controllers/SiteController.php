@@ -70,7 +70,7 @@ class SiteController extends Controller
         if(isset($access_token)){
             $identity = Yii::$app->user->loginByAccessToken($access_token);
             if($identity){
-                return $this->render('book/booklist',['messege'=>$identity->name]);
+                return $this->render('nov/article-list',['messege'=>$identity->name]);
             }else{
                 return $this->render('//user/login',['model'=>$model]);
             }
@@ -101,7 +101,7 @@ class SiteController extends Controller
             //return $this->render('//book/booklist',['message'=>'登录失败']);
             //}
             if ($model->login()) {
-                HttpHelper::redirect('http://18.220.118.168/book/book-list');
+                HttpHelper::redirect('http://www.ballreading.com/nov/article-list');
             } else {
                 return $this->goBack();
             }
