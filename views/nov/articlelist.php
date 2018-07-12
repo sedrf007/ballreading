@@ -30,6 +30,7 @@ $this->title = 'NOV云读书';
             <th>作者</th>
             <th>字数</th>
             <th>评论数</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>
@@ -42,6 +43,11 @@ $this->title = 'NOV云读书';
             <td><?= $v['writer'] ?></td>
             <td><?= $v['length'] ?></td>
             <td><?= $v['comment_num'] ?></td>
+            <?php if($v['writer']==Yii::$app->user->identity->author){?>
+                <td><a href="/nov/edit-page?id=<?=$v['id']?>">编辑</td>
+            <?php ;}else{ ?>
+                <td></td>
+            <?php ;}?>
             <?php }?>
             <?php }?>
         </tbody>

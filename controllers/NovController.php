@@ -111,4 +111,25 @@ class NovController extends Controller
         return OutputHelper::makeSuccOutput([]);
     }
 
+    public function actionEditPage()
+    {
+        $id = HttpHelper::postOrGet('id');
+        $data = Articles::findOne(['id'=>$id]);
+        return $this->render('editpage',[
+            'id'=>$id,
+            'writer'=>$data->writer,
+            'title'=>$data->title,
+            'text'=>$data->text
+        ]);
+    }
+
+    public function actionEditArticle()
+    {
+        $data = HttpHelper::postOrGets();
+        $article = Articles::findOne(['id'=>$data['id']]);
+        $article->load($data,'');
+        $article->save();
+        return OutputHelper::makeSuccOutput([]);
+    }
+
 }
