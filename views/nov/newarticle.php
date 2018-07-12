@@ -14,7 +14,7 @@ $this->registerJsFile("/js/summernote.js");
 $this->registerCssFile("/css/bootstrap.min.css");
 $this->registerCssFile("/css/bootstrap.min.css");
 $this->registerCssFile("/css/summernote.css");
-$this->registerJsFile("/js/nov/article.js");
+$this->registerJsFile("/js/nov/article.js?version=20180712");
 
 $this->title = 'NOV云读书';
 ?>

@@ -41,5 +41,5 @@ $this->title = 'NOV云读书';
         $('#summernote').summernote();
 
     });
-    
+
 </script>
