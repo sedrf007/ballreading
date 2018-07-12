@@ -161,6 +161,7 @@ class Controller extends \yii\base\Controller
      */
     public function beforeAction($action)
     {
+        $this->enableCsrfValidation = false;
         if (parent::beforeAction($action)) {
             if(YII_ENV_PROD){
                 if ($this->enableCsrfValidation && Yii::$app->getErrorHandler()->exception === null && !Yii::$app->getRequest()->validateCsrfToken()) {
