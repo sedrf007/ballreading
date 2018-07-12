@@ -13,5 +13,8 @@ use yii\db\ActiveRecord;
 
 class Articles extends ActiveRecord
 {
-
+    public function safeAttributes()
+    {
+        return $this->attributes();
+    }
 }

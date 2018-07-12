@@ -11,13 +11,15 @@ $this->registerJsFile('/js/jquery.min.js');
 $this->registerJsFile("/js/layer/layer.js");
 $this->registerJsFile("/js/nov/article.js");
 $this->registerJsFile("/js/bootstrap.min.js");
-$this->registerCssFile("/css/bootstrap.min.css");
 
 $this->title = 'NOV云读书';
 ?>
 <!--<div class="min-height-300 height-auto">-->
-<!--    <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#input">添加书籍</button>-->
+<!--    <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#input">添加文章</button>-->
 <!--</div>-->
+<div class="min-height-300 height-auto">
+    <a href="/nov/new-article"><button class="btn btn-warning btn-lg">添加文章</button></a>
+</div>
 <div class="min-height-500 height-auto bg-color-f5">
     <table class="table table-hover table-condensed">
         <thead>

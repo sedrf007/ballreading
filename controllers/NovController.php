@@ -25,11 +25,11 @@ class NovController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['article-list','article-detail'],
+                'only' => ['article-list','article-detail','new-article'],
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['article-list','article-detail'],
+                        'actions' => ['article-list','article-detail','new-article'],
                         'roles' => ['@'],
                     ],
                 ],
@@ -93,6 +93,22 @@ class NovController extends Controller
             return OutputHelper::makeOutput(-1001,'评论不能为空！');
         }
 
+    }
+
+    public function actionNewArticle()
+    {
+        $author = Yii::$app->user->identity->author;
+        return $this->render('newarticle',['author'=>$author]);
+    }
+
+    public function actionAddArticle()
+    {
+        $data = HttpHelper::postOrGets();
+        $data['book_no'] = Yii::$app->user->identity->version;
+        $model = new Articles();
+        $model->load($data,'');
+        $model->save();
+        return OutputHelper::makeSuccOutput([]);
     }
 
 }
