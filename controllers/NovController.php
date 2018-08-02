@@ -25,7 +25,7 @@ class NovController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['article-list','article-detail','new-article'],
+                'only' => ['article-list','new-article'],
                 'rules' => [
                     [
                         'allow' => true,
